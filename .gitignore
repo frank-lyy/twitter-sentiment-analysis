@@ -1,4 +1,5 @@
 *.csv
 *.env
-/__*
+/__pycache__
 /final*
+/testing
