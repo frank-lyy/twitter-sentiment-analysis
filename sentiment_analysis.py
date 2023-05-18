@@ -44,5 +44,9 @@ def sentiment_analyzer(query):
         clean_tweets.append(text_cleaner(tweet.text))
 
     predicted_sentiments = model.predict(clean_tweets)
-    return (sum(predicted_sentiments)/len(predicted_sentiments))*25
+    # for i, clean_tweet in enumerate(clean_tweets):
+    #     if predicted_sentiments[i] == 4: 
+    #         print(tweets.data[i])
+    #         print(clean_tweet)
+    return round((sum(predicted_sentiments)/len(predicted_sentiments))*25, 1)
 
