@@ -3,12 +3,6 @@ body {
 }
 
 .prompt {
-    position: absolute;
-    width: 485px;
-    height: 81.68px;
-    left: 82px;
-    top: 111px;
-
     font-family: 'Rubik';
     font-style: normal;
     font-weight: 700;
@@ -16,6 +10,25 @@ body {
     line-height: 76px;
 
     color: #FFFFFF;
+
+    display: flex;
+    align-items: center;
+}
+
+.prompt.left {
+    position: absolute;
+    width: 485px;
+    height: 81.68px;
+    left: 82px;
+    top: 111px;
+}
+
+.prompt.right {
+    position: absolute;
+    width: 47px;
+    height: 81px;
+    left: 712px;
+    top: 112px;
 }
 
 .query {
