@@ -1,11 +1,12 @@
 from flask import Flask, render_template, request
 from sentiment_analysis import sentiment_analyzer
 
-app = Flask('tweet_sentiment_analyzer')
+app = Flask(__name__)
 
 @app.route('/')
 def query():
-    return render_template('query.html')
+    return render_template('index.html')
+    # return render_template('query.html')
 
 @app.route('/results', methods=['POST'])
 def results():
@@ -14,3 +15,6 @@ def results():
         query = form['query']
         sentiment = sentiment_analyzer(query)
         return render_template('results.html', query=query, sentiment_score=sentiment)
+    
+if __name__ == "__main__":
+    app.run(debug=True)
