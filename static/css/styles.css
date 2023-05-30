@@ -3,11 +3,16 @@ body {
 }
 
 .prompt {
+    position: absolute;
+    left: clamp(40px, 5vw, 140px);
+    top: clamp(50px, 10vh, 200px);
+    display: inline;
+
     font-family: 'Rubik';
     font-style: normal;
     font-weight: 700;
     font-size: 64px;
-    line-height: 76px;
+    line-height: normal;
 
     color: #FFFFFF;
 
@@ -15,37 +20,42 @@ body {
     align-items: center;
 }
 
-.prompt.left {
-    position: absolute;
-    width: 485px;
-    height: 81.68px;
-    left: 82px;
-    top: 111px;
-}
-
-.prompt.right {
-    position: absolute;
-    width: 47px;
-    height: 81px;
-    left: 712px;
-    top: 112px;
+.form {
+    width: clamp(10%, 200px, 40%);
 }
 
 .query {
-    position: absolute;
-    width: 250px;
-    height: 52.43px;
-    left: 520px;
-    top: 126.12px;
-
+    width: 100%;
     font-family: 'Droid Sans';
     font-style: normal;
     font-weight: 700;
-    font-size: 48px;
-    line-height: 56px;
+    font-size: 72px;
     text-align: center;
+    line-height: normal;
     
     background-color: inherit;
     color: rgba(255, 255, 255, 0.6);
     border: 0cm;
+}
+
+.btn {
+    font-family: 'Lusitana';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.result {
+    position: absolute;
+    left: 60vw;
+    top: clamp(50px, 5vh, 200px);
+    width: clamp(20%, 600px, 50%);
+
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: normal;
+
+    color: #FFFFFF;
 }

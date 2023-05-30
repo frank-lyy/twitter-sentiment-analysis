@@ -5,8 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def query():
-    return render_template('index.html')
-    # return render_template('query.html')
+    return render_template('query.html')
 
 @app.route('/results', methods=['POST'])
 def results():
