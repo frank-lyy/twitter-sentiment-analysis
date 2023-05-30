@@ -44,9 +44,18 @@ def sentiment_analyzer(query):
         clean_tweets.append(text_cleaner(tweet.text))
 
     predicted_sentiments = model.predict(clean_tweets)
+    positive_tweets = []
+    negative_tweets = []
+    for i, sentiment in enumerate(predicted_sentiments):
+        if len(positive_tweets) >= 5 and len(negative_tweets) >= 5: break
+
+        tweet_id = tweets.data[i].id
+        embedded_tweet_code = f'<blockquote class="twitter-tweet"><a href="https://twitter.com/x/status/{tweet_id}"></a></blockquote><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>'
+        if sentiment > 0 and len(positive_tweets) < 5: positive_tweets.append(embedded_tweet_code)
+        elif sentiment == 0 and len(negative_tweets) < 5: negative_tweets.append(embedded_tweet_code)
     # for i, clean_tweet in enumerate(clean_tweets):
     #     if predicted_sentiments[i] == 4: 
     #         print(tweets.data[i])
     #         print(clean_tweet)
-    return round((sum(predicted_sentiments)/len(predicted_sentiments))*25, 1)
+    return round((sum(predicted_sentiments)/len(predicted_sentiments))*25, 1), positive_tweets, negative_tweets
 

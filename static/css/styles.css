@@ -6,7 +6,7 @@ body {
     position: absolute;
     left: clamp(40px, 5vw, 140px);
     top: clamp(50px, 10vh, 200px);
-    display: inline;
+    /* display: inline; */
 
     font-family: 'Rubik';
     font-style: normal;
@@ -21,7 +21,8 @@ body {
 }
 
 .form {
-    width: clamp(10%, 200px, 40%);
+    width: 200px;
+    min-width: 200px;
 }
 
 .query {
@@ -58,4 +59,17 @@ body {
     line-height: normal;
 
     color: #FFFFFF;
+}
+
+.tweet-container {
+    position: absolute;
+    left: clamp(40px, 5vw, 140px);
+    top: 200px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.tweet-list {
+    background-color: #659DBD;
 }

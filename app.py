@@ -12,8 +12,8 @@ def results():
     form = request.form
     if request.method == 'POST':
         query = form['query']
-        sentiment = sentiment_analyzer(query)
-        return render_template('results.html', query=query, sentiment_score=sentiment)
+        sentiment, pos_tweets, neg_tweets = sentiment_analyzer(query)
+        return render_template('results.html', query=query, sentiment_score=sentiment, pos_tweets=pos_tweets, neg_tweets=neg_tweets)
     
 if __name__ == "__main__":
     app.run(debug=True)
