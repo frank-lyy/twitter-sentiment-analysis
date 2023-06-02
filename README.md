@@ -1,1 +1,2 @@
-# twitter-sentiment-analysis
+# twitter sentiment analysis #
+to use, type in any search term and press 'Search' or 'Enter'. This app then queries tweets on twitter with that search term and evaluates the sentiment of the tweet, resulting in an overall popularity score for that term.

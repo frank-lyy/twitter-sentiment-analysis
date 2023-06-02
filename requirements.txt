@@ -1,0 +1,7 @@
+beautifulsoup4==4.11.1
+Flask==2.2.3
+HTMLParser==0.0.2
+nltk==3.8.1
+numpy==1.24.2
+python-dotenv==1.0.0
+tweepy==4.12.1
