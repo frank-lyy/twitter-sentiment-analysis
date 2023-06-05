@@ -10,7 +10,7 @@ model = pickle.load(open('final_model.sav', 'rb'))
 
 STOPWORDS = stopwords.words('english')
 
-def text_cleaner(text, remove_stopwords=True):
+def text_cleaner(text, remove_stopwords=False):
     temp = BeautifulSoup(text, 'lxml').get_text() # removes html encoding
     temp.replace("'", "") # avoids removing contractions
     temp = temp.lower() # lowercase
