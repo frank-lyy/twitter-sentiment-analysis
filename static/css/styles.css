@@ -2,11 +2,14 @@ body {
     background-color: #659DBD;
 }
 
+.main {
+    display: block;
+}
+
 .prompt {
-    position: absolute;
-    left: clamp(40px, 5vw, 140px);
-    top: clamp(50px, 10vh, 200px);
-    /* display: inline; */
+    position: relative;
+    padding-top: clamp(50px, 10vh, 200px);
+    padding-left: clamp(40px, 5vw, 140px);
 
     font-family: 'Rubik';
     font-style: normal;
@@ -47,9 +50,34 @@ body {
 }
 
 .result {
-    position: absolute;
-    left: 60vw;
-    top: clamp(50px, 5vh, 200px);
+    position: relative;
+    display: flex;
+    
+    margin-top: 16px;
+    padding-left: clamp(40px, 5vw, 140px);
+}
+
+.tweet-container {
+    position: relative;
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.tweet-list {
+    padding: 20px; 
+}
+
+.list-group-item {
+    background-color: #659DBD;
+    border-width: 4px;
+    border-color: #FFFFFF;
+}
+
+
+.score {
+    position: relative;
     width: clamp(20%, 600px, 50%);
 
     font-family: 'Rubik';
@@ -59,17 +87,4 @@ body {
     line-height: normal;
 
     color: #FFFFFF;
-}
-
-.tweet-container {
-    position: absolute;
-    left: clamp(40px, 5vw, 140px);
-    top: 200px;
-
-    display: flex;
-    justify-content: center;
-}
-
-.tweet-list {
-    background-color: #659DBD;
 }

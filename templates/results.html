@@ -2,29 +2,31 @@
 
 {% block content %}
 <div class="result">
-    <h3>Twitter Sentiment:</h3>
-    <div>
-        Tweets about <strong style="color: #000000;">{{ query }}</strong> are <strong style="color: #000000;"">{{ sentiment_score }}%</strong> positive.
+    <div class="tweet-container">
+        <div class="tweet-list">
+            <ul class="list-group">
+                <li class="list-group-item">{{ pos_tweets[0] | safe }}</li>
+                <li class="list-group-item">{{ pos_tweets[1] | safe }}</li>
+                <li class="list-group-item">{{ pos_tweets[2] | safe }}</li>
+                <li class="list-group-item">{{ pos_tweets[3] | safe }}</li>
+                <li class="list-group-item">{{ pos_tweets[4] | safe }}</li>
+            </ul>
+        </div>
+        <div class="tweet-list">
+            <ul class="list-group">
+                <li class="list-group-item">{{ neg_tweets[0] | safe }}</li>
+                <li class="list-group-item">{{ neg_tweets[1] | safe }}</li>
+                <li class="list-group-item">{{ neg_tweets[2] | safe }}</li>
+                <li class="list-group-item">{{ neg_tweets[3] | safe }}</li>
+                <li class="list-group-item">{{ neg_tweets[4] | safe }}</li>
+            </ul>
+        </div>
     </div>
-</div>
-<div class="tweet-container">
-    <div class="tweet-list">
-        <ul class="list-group">
-            <li class="list-group-item">{{ pos_tweets[0] | safe }}</li>
-            <li class="list-group-item">{{ pos_tweets[1] | safe }}</li>
-            <li class="list-group-item">{{ pos_tweets[2] | safe }}</li>
-            <li class="list-group-item">{{ pos_tweets[3] | safe }}</li>
-            <li class="list-group-item">{{ pos_tweets[4] | safe }}</li>
-        </ul>
-    </div>
-    <div class="tweet-list">
-        <ul class="list-group">
-            <li class="list-group-item">{{ neg_tweets[0] | safe }}</li>
-            <li class="list-group-item">{{ neg_tweets[1] | safe }}</li>
-            <li class="list-group-item">{{ neg_tweets[2] | safe }}</li>
-            <li class="list-group-item">{{ neg_tweets[3] | safe }}</li>
-            <li class="list-group-item">{{ neg_tweets[4] | safe }}</li>
-        </ul>
+    <div class="score">
+        <h3>Twitter Sentiment:</h3>
+        <div>
+            Tweets about <strong style="color: #000000;">{{ query }}</strong> are <strong style="color: #000000;"">{{ sentiment_score }}%</strong> positive.
+        </div>
     </div>
 </div>
 {% endblock %}

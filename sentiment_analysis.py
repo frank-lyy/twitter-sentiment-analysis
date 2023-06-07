@@ -32,11 +32,13 @@ bearer_token = os.getenv('BEARER_TOKEN')
 client = tweepy.Client(bearer_token)
 
 def sentiment_analyzer(query):
+    # return 0.0, ['hi', 'hi', 'hi', 'hi', 'hi'], ['bye', 'bye', 'bye', 'bye']
     filter_retweet = ' -is:retweet'
     filter_mentions = ' -has:mentions'
     filter_replies = ' -is:reply'
     filter_english = ' lang:en'
     
+    if not query: query == 'Tesla'
     tweets = client.search_recent_tweets(query=query+filter_retweet+filter_english, max_results=100)
     
     clean_tweets = []
